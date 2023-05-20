@@ -1,0 +1,7 @@
+version: "3.9"
+services: 
+  CapstoneProject:
+    image: reactapp:v1
+    container_name: ApplicationReact
+    ports:
+      - "81:80"
