@@ -1,4 +1,3 @@
-build.sh
 #!/bin/bash
 
 # Build Docker image from Dockerfile
