@@ -1,4 +1,4 @@
- FROM node:latest  
+ FROM node:latest 
  RUN apt-get update && apt-get install -y nginx 
  RUN rm /etc/nginx/sites-enabled/default 
  COPY default /etc/nginx/sites-enabled/ 
