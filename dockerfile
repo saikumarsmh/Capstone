@@ -5,7 +5,7 @@
  WORKDIR /usr/src/app 
  ENV NODE_OPTIONS="--openssl-legacy-provider" 
  COPY package*.json ./ 
- RUN npm install 
+ #RUN npm install 
  COPY . . 
  RUN npm run build 
  RUN echo "server {\n\tlisten 80;\n\troot /usr/src/app/build;\n\tindex index.html;\n\tserver_name localhost;\n}" > /etc/nginx/sites-enabled/default 
