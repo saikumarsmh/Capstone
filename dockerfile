@@ -4,7 +4,8 @@
  COPY default /etc/nginx/sites-enabled/ 
  WORKDIR /usr/src/app 
  ENV NODE_OPTIONS="--openssl-legacy-provider" 
- #COPY package*.json ./
+ RUN pwd
+ COPY package*.json ./
  COPY . .
  RUN npm install
  RUN npm run build 
