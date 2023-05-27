@@ -11,7 +11,7 @@ pipeline {
                     properties([
                         parameters([
                             string(
-                                defaultValue: 'v1', 
+                                defaultValue: 'v3', 
                                 name: 'IMAGE_VERSION', 
                                 trim: true
                             )
