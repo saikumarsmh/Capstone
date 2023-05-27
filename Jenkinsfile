@@ -1,7 +1,7 @@
 pipeline {
-    agent any
+    agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerid')
+    DOCKERHUB_CREDENTIALS = credentials('devopstoken')
      }
      
     stages{
@@ -55,8 +55,10 @@ pipeline {
             }
 
             steps{
-                 sh  'docker build -t reactapp:$IMAGE_VERSION .'
+                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                 sh  'sudo docker build -t reactapp:$IMAGE_VERSION .'
                  sh 'sudo docker tag reactapp:$IMAGE_VERSION saidevops22/reactdev:$IMAGE_VERSION'
+                 sh 'pwd'
                  sh 'sudo docker push saidevops22/reactdev:$IMAGE_VERSION'
            
             }
